@@ -1,14 +1,14 @@
+
 program main !
+! implicit none
 integer :: i
 integer :: j
 integer, dimension(4, 4) :: A, B, C
 integer :: check
-do i = 1, 4, 1
-	DO J = 1, 4, 1
-		A(i, J) = 5
-		print*, A(i, J)
-	END DO
-END DO
+
+A = 0
+A = A + 5
+
 do i = 1, 4 , 1
 	do j = 1, 4, 1
 		B(i,j) = i + j
@@ -16,12 +16,13 @@ do i = 1, 4 , 1
 end do 
 end do
 
+C = A + B
 do i = 1, 4, 1
+	print*, ""
 	do j = 1, 4, 1
-	C(i,j) = A(i,j) + B(i,j)
-	print*, C(i,j)
-end do 
-end do	
+		write(stdout, 10, advance='no') A(i,j)
+	end do
+end do
 
 do i = 1, 4, 1
 	do j = 1, 4, 1
@@ -32,7 +33,6 @@ do i = 1, 4, 1
 		end if
 	end do
 end do
-
 
 
 end program main
